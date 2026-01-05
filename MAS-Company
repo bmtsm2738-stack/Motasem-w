@@ -1,1 +1,160 @@
 
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>شركة ماس</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+:root{
+  --bg:#f4f6f8;
+  --box:#ffffff;
+  --main:#0b3c5d;
+  --dark:#0f2a3d;
+  --text:#222;
+}
+body.dark{
+  --bg:#121212;
+  --box:#1e1e1e;
+  --main:#1d6fa5;
+  --dark:#000;
+  --text:#eee;
+}
+body{
+  margin:0;font-family:Tahoma,Arial;
+  direction:rtl;background:var(--bg);color:var(--text);
+  transition:0.3s;
+}
+header{
+  background:linear-gradient(135deg,var(--main),#1d6fa5);
+  color:#fff;padding:40px;text-align:center;
+}
+nav{
+  background:var(--dark);
+  padding:12px;text-align:center;position:sticky;top:0;z-index:10;
+}
+nav a, nav button{
+  color:#fff;margin:0 10px;text-decoration:none;
+  background:none;border:none;font-weight:bold;cursor:pointer;
+}
+section{padding:40px 20px;}
+.box{
+  background:var(--box);border-radius:10px;
+  padding:25px;margin-bottom:30px;
+}
+.services{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+.card{
+  background:var(--bg);padding:20px;border-radius:10px;
+  text-align:center;transition:0.3s;
+}
+.card:hover{transform:translateY(-6px)}
+.stats{
+  background:var(--main);color:#fff;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  text-align:center;
+}
+.stats div{padding:25px;font-size:18px}
+footer{
+  background:var(--dark);color:#fff;text-align:center;padding:20px
+}
+.whatsapp{
+  position:fixed;bottom:20px;left:20px;
+  background:#25d366;color:#fff;
+  padding:15px 18px;border-radius:50%;
+  text-decoration:none;font-size:22px
+}
+</style>
+</head>
+<body>
+<header>
+  <h1 id="title">شركة ماس</h1>
+  <p id="subtitle">حلول هندسية ومقاولات متكاملة</p>
+</header>
+<nav>
+  <a href="#home" id="navHome">الرئيسية</a>
+  <a href="#about" id="navAbout">من نحن</a>
+  <a href="#services" id="navServices">الخدمات</a>
+  <a href="#contact" id="navContact">تواصل</a>
+  <button onclick="toggleDark()">🌙</button>
+  <button onclick="toggleLang()">🌍</button>
+</nav>
+<section id="about">
+  <div class="box">
+   <h2 id="aboutTitle">من نحن</h2>
+   <p id="aboutText">
+    شركة ماس شركة رائدة في المقاولات والتشطيبات
+    والأعمال الهندسية، نعمل بأعلى معايير الجودة.
+   </p>
+  </div>
+</section>
+<section id="services">
+  <div class="box">
+   <h2 id="servicesTitle">خدماتنا</h2>
+   <div class="services">
+    <div class="card" id="service1">مقاولات عامة</div>
+    <div class="card" id="service2">تشطيبات</div>
+    <div class="card" id="service3">أعمال كهرباء وميكانيكا</div>
+    <div class="card" id="service4">إدارة مشروعات</div>
+   </div>
+  </div>
+</section>
+<section id="contact">
+  <div class="box">
+   <h2 id="contactTitle">تواصل معنا</h2>
+   <p id="contactPhone">📞 01229751050</p>
+   <p>تواصل معنا عبر الرقم أو اضغط على زر الواتساب للرسائل الفورية.</p>
+  </div>
+</section>
+<footer>
+ © 2026 جميع الحقوق محفوظة – شركة ماس
+</footer>
+<a class="whatsapp" href="https://wa.me/201229751050">💬</a>
+<script>
+function toggleDark(){
+ document.body.classList.toggle("dark");
+}
+let ar=true;
+function toggleLang(){
+ ar=!ar;
+ if(ar){
+   document.body.style.direction="rtl";
+   document.getElementById("title").innerText="شركة ماس";
+   document.getElementById("subtitle").innerText="حلول هندسية ومقاولات متكاملة";
+   document.getElementById("navHome").innerText="الرئيسية";
+   document.getElementById("navAbout").innerText="من نحن";
+   document.getElementById("navServices").innerText="الخدمات";
+   document.getElementById("navContact").innerText="تواصل";
+   document.getElementById("aboutTitle").innerText="من نحن";
+   document.getElementById("aboutText").innerText="شركة ماس شركة رائدة في المقاولات والتشطيبات والأعمال الهندسية، نعمل بأعلى معايير الجودة.";
+   document.getElementById("servicesTitle").innerText="خدماتنا";
+   document.getElementById("service1").innerText="مقاولات عامة";
+   document.getElementById("service2").innerText="تشطيبات";
+   document.getElementById("service3").innerText="أعمال كهرباء وميكانيكا";
+   document.getElementById("service4").innerText="إدارة مشروعات";
+   document.getElementById("contactTitle").innerText="تواصل معنا";
+   document.getElementById("contactPhone").innerText="📞 01229751050";
+ } else {
+   document.body.style.direction="ltr";
+   document.getElementById("title").innerText="MAS Company";
+   document.getElementById("subtitle").innerText="Engineering & Contracting Solutions";
+   document.getElementById("navHome").innerText="Home";
+   document.getElementById("navAbout").innerText="About Us";
+   document.getElementById("navServices").innerText="Services";
+   document.getElementById("navContact").innerText="Contact";
+   document.getElementById("aboutTitle").innerText="About Us";
+   document.getElementById("aboutText").innerText="MAS Company is a leading contracting and engineering company, delivering the highest quality standards.";
+   document.getElementById("servicesTitle").innerText="Our Services";
+   document.getElementById("service1").innerText="General Contracting";
+   document.getElementById("service2").innerText="Finishing Works";
+   document.getElementById("service3").innerText="Electrical & Mechanical Works";
+   document.getElementById("service4").innerText="Project Management";
+   document.getElementById("contactTitle").innerText="Contact Us";
+   document.getElementById("contactPhone").innerText="📞 01229751050";
+ }
+}
+</script>
+</body>
+</html>
